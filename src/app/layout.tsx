@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-background text-text-primary antialiased">
+      <body className="bg-background text-text-primary antialiased overflow-x-hidden">
         <CustomCursor />
         <LoadingScreen />
         {children}
