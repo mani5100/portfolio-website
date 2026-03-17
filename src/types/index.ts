@@ -10,6 +10,7 @@ export interface PersonalInfo {
   website?: string;
   profileImage: string;
   cvUrl: string;
+  resumeUrl: string;
 }
 
 export interface WorkExperience {

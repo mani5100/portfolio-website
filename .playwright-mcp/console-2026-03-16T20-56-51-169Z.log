@@ -1,0 +1,9 @@
+[   29330ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://dribbble.com/favicon.ico:0
+[   32629ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://dribbble.com/screenshot_boost?render_in_list=true&original_params=%7B%22format%22:%22html%22,%22controller%22:%22searches%22,%22action%22:%22show%22,%22keyword%22:%22portfolio%22%7D&request_source=Search+Feed&number_of_boosts=1&current_page=1:0
+[   35363ms] [ERROR] Not signed in with the identity provider. @ https://dribbble.com/search/portfolio:0
+[   36068ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client:81
+[   38597ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://dribbble.com/assets/caret-right-f469f33b.svg:0
+[   53263ms] [WARNING] Failed parsing 'srcset' attribute value since its 'w' descriptor is invalid. @ https://cdn.dribbble.com/assets/vite/assets/ls.rias-045c567b.js:0
+[   53263ms] [WARNING] Dropped srcset candidate "https://cdn.dribbble.com/userupload/40420207/file/original-7c70cb1da33d4e1fcd9e0c3b416f1c3a.png?resize=0x0&vertical=center" @ https://cdn.dribbble.com/assets/vite/assets/ls.rias-045c567b.js:0
+[   60436ms] [WARNING] Failed parsing 'srcset' attribute value since its 'w' descriptor is invalid. @ https://cdn.dribbble.com/assets/vite/assets/ls.rias-045c567b.js:0
+[   60437ms] [WARNING] Dropped srcset candidate "https://cdn.dribbble.com/userupload/14090640/file/original-8b1d2ba161b202191a052cdc3ca10868.jpg?resize=0x0&vertical=center" @ https://cdn.dribbble.com/assets/vite/assets/ls.rias-045c567b.js:0

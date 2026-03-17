@@ -30,6 +30,7 @@ module.exports = {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.6s ease-out",
         "slide-in-left": "slideInLeft 0.6s ease-out",
+        "dot-pulse": "dotPulse 2.4s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -43,6 +44,10 @@ module.exports = {
         slideInLeft: {
           "0%": { opacity: "0", transform: "translateX(-30px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        dotPulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%":       { opacity: "0.75" },
         },
       },
     },

@@ -1,52 +1,197 @@
+"use client";
+import { useRef } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { publications } from "@/data/portfolio";
 import { FiExternalLink } from "react-icons/fi";
 
-const publisherColor: Record<string, string> = {
-  IEEE: "bg-blue-500/10 text-blue-400 border-blue-500/20",
-  Wiley: "bg-purple-500/10 text-purple-400 border-purple-500/20",
-  Springer: "bg-orange-500/10 text-orange-400 border-orange-500/20",
+/* ─── Topic tags ────────────────────────────────────────────────────── */
+const pubTopic: Record<string, string> = {
+  "1": "AI Surveillance",
+  "2": "Satellite Imagery",
+  "3": "Deepfake Detection",
+  "4": "Computer Vision",
+  "5": "Agricultural AI",
+  "6": "Medical AI",
 };
 
+/* ─── Color maps ────────────────────────────────────────────────────── */
+const publisherColor: Record<string, string> = {
+  IEEE:    "bg-blue-500/10 text-blue-400 border-blue-500/20",
+  Wiley:   "bg-purple-500/10 text-purple-400 border-purple-500/20",
+  Springer:"bg-orange-500/10 text-orange-400 border-orange-500/20",
+};
+
+const topicColor: Record<string, string> = {
+  "AI Surveillance":   "bg-red-500/10 text-red-400 border-red-500/20",
+  "Satellite Imagery": "bg-sky-500/10 text-sky-400 border-sky-500/20",
+  "Deepfake Detection":"bg-purple-500/10 text-purple-400 border-purple-500/20",
+  "Computer Vision":   "bg-green-500/10 text-green-400 border-green-500/20",
+  "Agricultural AI":   "bg-lime-500/10 text-lime-400 border-lime-500/20",
+  "Medical AI":        "bg-pink-500/10 text-pink-400 border-pink-500/20",
+};
+
+/* ─── Animation variants ────────────────────────────────────────────── */
+const sectionHeaderVariant = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
+
+const fadeUpVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+const listVariant = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+/* ─── Shared badge row ──────────────────────────────────────────────── */
+function Badges({ pub }: { pub: (typeof publications)[number] }) {
+  const topic = pubTopic[pub.id];
+  return (
+    <div className="flex flex-wrap items-center gap-2 flex-shrink-0">
+      <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${publisherColor[pub.publisher] || "tag"}`}>
+        {pub.publisher}
+      </span>
+      {topic && (
+        <span className={`text-xs px-2.5 py-1 rounded-full border ${topicColor[topic] || "tag"}`}>
+          {topic}
+        </span>
+      )}
+      <span className={`text-xs px-2.5 py-1 rounded-full border ${
+        pub.status === "Published"
+          ? "bg-green-500/10 text-green-400 border-green-500/20"
+          : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
+      }`}>
+        {pub.status}
+      </span>
+    </div>
+  );
+}
+
+/* ─── Main component ────────────────────────────────────────────────── */
 export default function Publications() {
+  const prefersReduced = useReducedMotion();
+
+  const headerRef    = useRef(null);
+  const featuredRef  = useRef(null);
+  const listRef      = useRef(null);
+
+  const headerInView   = useInView(headerRef,   { once: true, margin: "-80px" });
+  const featuredInView = useInView(featuredRef, { once: true, margin: "-80px" });
+  const listInView     = useInView(listRef,     { once: true, margin: "-80px" });
+
+  const featuredPub = publications[0]; // id "1" — Wiley journal paper
+  const restPubs    = publications.slice(1);
+
   return (
     <section id="publications" className="section-padding">
       <div className="container-max">
-        <div className="flex flex-col items-center text-center mb-12">
-          <p className="text-primary font-mono text-sm mb-2 tracking-wider uppercase">
+
+        {/* Section header */}
+        <motion.div
+          ref={headerRef}
+          className="flex flex-col items-center text-center mb-12"
+          variants={sectionHeaderVariant}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+        >
+          <motion.p
+            className="text-primary font-mono text-sm mb-2 tracking-wider uppercase"
+            variants={fadeUpVariant}
+          >
             Research output
-          </p>
-          <h2 className="section-title">Publications</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4" />
-          <p className="text-text-secondary max-w-xl">
-            6 peer-reviewed papers as an undergraduate across IEEE, Wiley, and
-            Springer — covering AI surveillance, deepfake detection, medical
-            imaging, satellite imagery analysis, and agricultural AI.
-          </p>
-        </div>
+          </motion.p>
+          <motion.h2 className="section-title" variants={fadeUpVariant}>
+            Publications
+          </motion.h2>
+          <motion.div
+            className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4"
+            variants={fadeUpVariant}
+          />
+          <motion.p className="text-text-secondary max-w-xl" variants={fadeUpVariant}>
+            6 peer-reviewed papers as an undergraduate across IEEE, Wiley, and Springer — covering AI
+            surveillance, deepfake detection, medical imaging, satellite imagery analysis, and agricultural AI.
+          </motion.p>
+        </motion.div>
 
-        <div className="space-y-4">
-          {publications.map((pub, index) => (
-            <div
+        {/* Featured card — Wiley journal paper */}
+        <motion.div
+          ref={featuredRef}
+          className="card border-primary/30 shadow-lg shadow-primary/5 mb-10
+                     hover:border-primary/50 hover:shadow-primary/10 transition-shadow duration-300"
+          variants={prefersReduced ? undefined : fadeUpVariant}
+          initial="hidden"
+          animate={featuredInView ? "visible" : "hidden"}
+        >
+          {/* ★ Journal label */}
+          <p className="text-primary font-mono text-xs uppercase tracking-wider mb-3">
+            ★ Journal Publication
+          </p>
+
+          {/* Title + link */}
+          <div className="flex items-start justify-between gap-6 mb-2">
+            <h3 className="text-text-primary font-semibold text-lg leading-snug flex-1">
+              {featuredPub.title}
+              {featuredPub.url && (
+                <a
+                  href={featuredPub.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block ml-2 text-text-muted hover:text-primary transition-colors"
+                  aria-label="View paper"
+                >
+                  <FiExternalLink size={14} />
+                </a>
+              )}
+            </h3>
+          </div>
+
+          {/* Venue + year */}
+          <p className="text-text-muted text-sm mb-4">
+            <span className="text-accent">{featuredPub.venue}</span>
+            {" · "}
+            {featuredPub.year}
+          </p>
+
+          {/* Badges */}
+          <Badges pub={featuredPub} />
+        </motion.div>
+
+        {/* Remaining publications */}
+        <motion.div
+          ref={listRef}
+          className="space-y-4"
+          variants={prefersReduced ? undefined : listVariant}
+          initial="hidden"
+          animate={listInView ? "visible" : "hidden"}
+        >
+          {restPubs.map((pub) => (
+            <motion.div
               key={pub.id}
-              className="card flex gap-5 items-start group hover:border-primary/40 transition-all duration-300"
+              variants={prefersReduced ? undefined : cardVariant}
+              className="card flex flex-col sm:flex-row sm:items-center gap-4
+                         hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-shadow duration-300"
             >
-              {/* Index */}
-              <span className="font-mono text-text-muted text-sm flex-shrink-0 pt-0.5">
-                [{String(index + 1).padStart(2, "0")}]
-              </span>
-
-              {/* Content */}
+              {/* Left: title + venue */}
               <div className="flex-1 min-w-0">
-                <h3 className="text-text-primary font-medium leading-snug mb-2 group-hover:text-primary-light transition-colors">
+                <h3 className="text-text-primary font-medium leading-snug mb-1">
                   {pub.title}
                   {pub.url && (
                     <a
                       href={pub.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block ml-2 text-text-muted hover:text-primary"
+                      className="inline-block ml-2 text-text-muted hover:text-primary transition-colors"
+                      aria-label="View paper"
                     >
-                      <FiExternalLink size={14} />
+                      <FiExternalLink size={13} />
                     </a>
                   )}
                 </h3>
@@ -57,28 +202,12 @@ export default function Publications() {
                 </p>
               </div>
 
-              {/* Badges */}
-              <div className="flex flex-col gap-2 flex-shrink-0 items-end">
-                <span
-                  className={`text-xs px-2.5 py-1 rounded-full border font-medium ${
-                    publisherColor[pub.publisher] || "tag"
-                  }`}
-                >
-                  {pub.publisher}
-                </span>
-                <span
-                  className={`text-xs px-2.5 py-1 rounded-full border ${
-                    pub.status === "Published"
-                      ? "bg-green-500/10 text-green-400 border-green-500/20"
-                      : "bg-yellow-500/10 text-yellow-400 border-yellow-500/20"
-                  }`}
-                >
-                  {pub.status}
-                </span>
-              </div>
-            </div>
+              {/* Right: badges */}
+              <Badges pub={pub} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );

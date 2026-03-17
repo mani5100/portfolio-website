@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LoadingScreen from "@/components/LoadingScreen";
+import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Abdul Rehman | Portfolio",
@@ -22,6 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-background text-text-primary antialiased">
+        <CustomCursor />
+        <LoadingScreen />
         {children}
       </body>
     </html>

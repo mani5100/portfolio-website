@@ -20,6 +20,7 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/mani5100",
   profileImage: "/profile.png",
   cvUrl: "/Abdul Rehman CV.pdf",
+  resumeUrl: "/Abdul Rehman Resume.pdf",
 };
 
 // ─── Work Experience ──────────────────────────────────────────────────────────
@@ -32,11 +33,11 @@ export const experiences: WorkExperience[] = [
     endDate: "Present",
     location: "Remote, Pakistan",
     description: [
-      "Building Digitalytics-voice — a production voice AI system handling real-time speech interactions.",
-      "Developing Digitalytics-platform — a SaaS platform with billing dashboard and full deployment pipeline.",
-      "Working in TypeScript on the deployment branch with near-daily production commits.",
+      "Deploying production voice agents on Retell AI — call flows, LLM prompts, and Twilio telephony integration.",
+      "Building n8n AI agent workflows that orchestrate LLMs, voice agents, and third-party APIs.",
+      "Contributing full-stack (TypeScript, Node.js) across backend APIs and frontend interfaces.",
     ],
-    technologies: ["TypeScript", "OpenAI API", "Node.js", "SaaS", "Voice AI"],
+    technologies: ["Retell AI", "n8n", "OpenAI", "Twilio", "TypeScript", "Node.js"],
   },
   {
     id: "2",
