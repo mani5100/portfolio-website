@@ -12,7 +12,7 @@ export default function Image() {
         style={{
           width: "1200px",
           height: "630px",
-          background: "#0a0a0f",
+          background: "#0b0e14",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -32,7 +32,7 @@ export default function Image() {
             height: "500px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(34,211,238,0.18) 0%, transparent 70%)",
           }}
         />
         <div
@@ -44,7 +44,7 @@ export default function Image() {
             height: "450px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(167,139,250,0.14) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(103,232,249,0.14) 0%, transparent 70%)",
           }}
         />
 
@@ -54,7 +54,7 @@ export default function Image() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(99,102,241,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.04) 1px, transparent 1px)",
+              "linear-gradient(rgba(34,211,238,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.04) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
@@ -77,13 +77,13 @@ export default function Image() {
               fontFamily: "ui-monospace, monospace",
               fontSize: "22px",
               fontWeight: 700,
-              color: "#818cf8",
+              color: "#67e8f9",
               marginBottom: "32px",
               letterSpacing: "-0.5px",
-              border: "1px solid rgba(99,102,241,0.3)",
+              border: "1px solid rgba(34,211,238,0.3)",
               padding: "6px 18px",
               borderRadius: "8px",
-              background: "rgba(99,102,241,0.08)",
+              background: "rgba(34,211,238,0.08)",
             }}
           >
             AR.
@@ -108,7 +108,7 @@ export default function Image() {
             style={{
               fontSize: "28px",
               fontWeight: 500,
-              color: "#818cf8",
+              color: "#67e8f9",
               marginBottom: "44px",
               letterSpacing: "0.2px",
             }}
@@ -136,8 +136,8 @@ export default function Image() {
                   flexDirection: "column",
                   alignItems: "center",
                   padding: "14px 24px",
-                  background: "rgba(99,102,241,0.08)",
-                  border: "1px solid rgba(99,102,241,0.22)",
+                  background: "rgba(34,211,238,0.08)",
+                  border: "1px solid rgba(34,211,238,0.22)",
                   borderRadius: "12px",
                   gap: "4px",
                 }}

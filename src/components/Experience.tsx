@@ -67,7 +67,7 @@ export default function Experience() {
             className="hidden md:block absolute left-8 top-0 bottom-0 w-px"
             style={{
               background:
-                "linear-gradient(to bottom, #6366f1 0%, #a78bfa 60%, #1e1e2e 100%)",
+                "linear-gradient(to bottom, #22d3ee 0%, #0e7490 60%, #1d2635 100%)",
               transformOrigin: "top",
             }}
             initial={{ scaleY: 0 }}

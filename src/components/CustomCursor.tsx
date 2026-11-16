@@ -121,10 +121,10 @@ export default function CustomCursor() {
           height:          hovering ? 44 : 28,
           scale:           ringScale,
           borderColor:     hovering
-            ? "rgba(99,102,241,1.0)"
-            : "rgba(99,102,241,0.7)",
+            ? "rgba(34,211,238,1.0)"
+            : "rgba(34,211,238,0.7)",
           backgroundColor: hovering
-            ? "rgba(99,102,241,0.12)"
+            ? "rgba(34,211,238,0.12)"
             : "rgba(0,0,0,0)",
         }}
         transition={{

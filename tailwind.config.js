@@ -8,22 +8,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
-        surface: "#12121a",
-        "surface-2": "#1a1a26",
+        background: "#0b0e14",
+        surface: "#10151e",
+        "surface-2": "#161d29",
         primary: {
-          DEFAULT: "#6366f1",
-          light: "#818cf8",
-          dark: "#4f46e5",
+          DEFAULT: "#22d3ee",
+          light: "#67e8f9",
+          dark: "#06b6d4",
         },
-        accent: "#a78bfa",
-        "text-primary": "#f1f5f9",
-        "text-secondary": "#94a3b8",
-        "text-muted": "#475569",
-        border: "#1e1e2e",
+        accent: "#f59e0b",
+        "text-primary": "#e8edf4",
+        "text-secondary": "#97a3b6",
+        "text-muted": "#5d6a7d",
+        border: "#1d2635",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["'Space Grotesk'", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       animation: {

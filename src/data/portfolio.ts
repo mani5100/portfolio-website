@@ -27,7 +27,7 @@ export const experiences: WorkExperience[] = [
   {
     id: "1",
     company: "Nextbridge Ltd.",
-    role: "Trainee AI Engineer",
+    role: "AI Engineer",
     startDate: "Jul 2026",
     endDate: "Present",
     location: "Lahore, Pakistan",

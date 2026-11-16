@@ -2,19 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  --background: #0a0a0f;
-  --surface: #12121a;
-  --surface-2: #1a1a26;
-  --primary: #6366f1;
-  --primary-light: #818cf8;
-  --accent: #a78bfa;
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
-  --border: #1e1e2e;
+  --background: #0b0e14;
+  --surface: #10151e;
+  --surface-2: #161d29;
+  --primary: #22d3ee;
+  --primary-light: #67e8f9;
+  --accent: #f59e0b;
+  --text-primary: #e8edf4;
+  --text-secondary: #97a3b6;
+  --text-muted: #5d6a7d;
+  --border: #1d2635;
 }
 
 * {
@@ -31,6 +31,11 @@ html {
 
 body {
   background-color: var(--background);
+  background-image:
+    radial-gradient(1000px 640px at 85% -10%, rgba(34, 211, 238, 0.07), transparent 60%),
+    radial-gradient(800px 560px at 0% 36%, rgba(103, 232, 249, 0.04), transparent 58%),
+    radial-gradient(900px 620px at 100% 78%, rgba(245, 158, 11, 0.035), transparent 60%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,17 +52,17 @@ body {
   background: var(--surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: var(--primary-dark, #06b6d4);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-light);
+  background: var(--primary);
 }
 
 /* Selection */
 ::selection {
   background: var(--primary);
-  color: white;
+  color: #06222b;
 }
 
 /* Nav link hover bloom */
@@ -66,7 +71,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 6px;
-  background: radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(34,211,238,0.12) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 180ms ease;
   pointer-events: none;
@@ -75,8 +80,8 @@ body {
 
 /* Logo dot pulse */
 @keyframes dotPulse {
-  0%, 100% { text-shadow: 0 0 6px rgba(99,102,241,0.6), 0 0 12px rgba(99,102,241,0.3); opacity: 1; }
-  50%       { text-shadow: 0 0 14px rgba(167,139,250,0.9), 0 0 28px rgba(99,102,241,0.5); opacity: 0.75; }
+  0%, 100% { text-shadow: 0 0 6px rgba(34,211,238,0.6), 0 0 12px rgba(34,211,238,0.3); opacity: 1; }
+  50%       { text-shadow: 0 0 14px rgba(103,232,249,0.9), 0 0 28px rgba(34,211,238,0.5); opacity: 0.75; }
 }
 .logo-dot { display: inline-block; animation: dotPulse 2.4s ease-in-out infinite; }
 
@@ -88,24 +93,28 @@ body {
     @apply max-w-6xl mx-auto;
   }
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold text-text-primary mb-4;
+    @apply font-display text-3xl sm:text-4xl font-bold text-text-primary mb-4 tracking-tight;
   }
   .section-subtitle {
     @apply text-text-secondary text-lg mb-12;
   }
   .card {
-    @apply bg-surface border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300;
+    @apply rounded-xl p-6 border border-white/5 transition-all duration-300;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.008)), var(--surface);
+  }
+  .card:hover {
+    @apply border-primary/30;
   }
   .btn-primary {
-    @apply bg-primary hover:bg-primary-dark text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
+    @apply bg-primary hover:bg-primary-light text-[#06222b] font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
   }
   .btn-outline {
-    @apply border border-primary text-primary hover:bg-primary hover:text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
+    @apply border border-primary/60 text-primary hover:bg-primary hover:text-[#06222b] font-medium px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
   }
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent;
   }
   .tag {
-    @apply bg-primary/10 text-primary-light text-xs font-medium px-3 py-1 rounded-full border border-primary/20;
+    @apply bg-primary/10 text-primary-light text-xs font-medium px-3 py-1 rounded-full border border-primary/15;
   }
 }

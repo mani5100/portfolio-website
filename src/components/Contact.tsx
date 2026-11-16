@@ -37,7 +37,7 @@ export default function Contact() {
                      shadow-2xl shadow-primary/10 p-10 sm:p-14 text-center"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 0%, rgba(99,102,241,0.08) 0%, transparent 65%), #12121a",
+              "radial-gradient(ellipse at 50% 0%, rgba(34,211,238,0.08) 0%, transparent 65%), #10151e",
           }}
           variants={prefersReduced ? undefined : containerVariant}
           initial="hidden"
@@ -58,7 +58,7 @@ export default function Contact() {
 
             {/* Gradient headline */}
             <motion.h2
-              className="text-4xl sm:text-5xl font-bold gradient-text mb-6"
+              className="font-display text-4xl sm:text-5xl font-bold gradient-text mb-6 pb-1 leading-[1.15] tracking-tight"
               variants={prefersReduced ? undefined : itemVariant}
             >
               Let&apos;s Build Something

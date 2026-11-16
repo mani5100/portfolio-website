@@ -91,7 +91,7 @@ export default function Navbar() {
     <>
       {/* ── Scroll progress bar ── */}
       <div
-        className="fixed top-0 left-0 h-[2px] z-[60] bg-gradient-to-r from-primary via-accent to-primary-light"
+        className="fixed top-0 left-0 h-[2px] z-[60] bg-gradient-to-r from-primary-dark via-primary to-primary-light"
         style={{ width: `${scrollProgress}%`, transition: "width 80ms linear" }}
       />
 
@@ -106,7 +106,7 @@ export default function Navbar() {
 
           {/* ── Logo ── */}
           <a href="#" className="relative group font-mono text-xl font-bold select-none">
-            <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent">
               AR
             </span>
             <span className="text-primary logo-dot">.</span>
@@ -145,8 +145,8 @@ export default function Navbar() {
                       layoutId="activeNavPill"
                       className="absolute inset-0 rounded-md"
                       style={{
-                        background: "rgba(99,102,241,0.12)",
-                        border: "1px solid rgba(99,102,241,0.25)",
+                        background: "rgba(34,211,238,0.12)",
+                        border: "1px solid rgba(34,211,238,0.25)",
                       }}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
@@ -161,7 +161,7 @@ export default function Navbar() {
               href={personalInfo.resumeUrl}
               download
               variants={prefersReduced ? undefined : navLinkVariants}
-              className="relative ml-4 overflow-hidden border border-primary/60 text-primary text-sm font-medium px-4 py-[7px] rounded-md group transition-colors duration-300 hover:text-white hover:border-primary inline-flex items-center gap-1.5 hover:shadow-[0_0_16px_rgba(99,102,241,0.45),0_0_32px_rgba(99,102,241,0.2)]"
+              className="relative ml-4 overflow-hidden border border-primary/60 text-primary text-sm font-medium px-4 py-[7px] rounded-md group transition-colors duration-300 hover:text-white hover:border-primary inline-flex items-center gap-1.5 hover:shadow-[0_0_16px_rgba(34,211,238,0.45),0_0_32px_rgba(34,211,238,0.2)]"
             >
               <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative">Resume</span>
@@ -215,7 +215,7 @@ export default function Navbar() {
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-border/60">
                 <span className="font-mono text-xl font-bold">
-                  <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent">AR</span>
+                  <span className="bg-gradient-to-r from-primary-light to-primary bg-clip-text text-transparent">AR</span>
                   <span className="text-primary logo-dot">.</span>
                 </span>
                 <button
@@ -263,7 +263,7 @@ export default function Navbar() {
                   href={personalInfo.resumeUrl}
                   download
                   onClick={() => setMenuOpen(false)}
-                  className="w-full relative overflow-hidden border border-primary/60 text-primary hover:text-white text-sm font-medium px-5 py-2.5 rounded-md transition-all duration-300 inline-flex items-center justify-center gap-1.5 group hover:border-primary hover:shadow-[0_0_16px_rgba(99,102,241,0.45),0_0_32px_rgba(99,102,241,0.2)]"
+                  className="w-full relative overflow-hidden border border-primary/60 text-primary hover:text-white text-sm font-medium px-5 py-2.5 rounded-md transition-all duration-300 inline-flex items-center justify-center gap-1.5 group hover:border-primary hover:shadow-[0_0_16px_rgba(34,211,238,0.45),0_0_32px_rgba(34,211,238,0.2)]"
                 >
                   <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <span className="relative">Resume</span>

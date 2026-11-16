@@ -38,19 +38,19 @@ export default function Hero() {
             animate="visible"
           >
             <motion.p
-              className="text-primary font-mono text-sm mb-4 tracking-wider uppercase"
+              className="text-primary font-mono text-sm mb-4 tracking-wider"
               variants={heroTextItem}
             >
-              Hi, my name is
+              Lahore, Pakistan · Open to AI engineering roles
             </motion.p>
             <motion.h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primary mb-4 leading-tight"
+              className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-text-primary mb-4 leading-[1.05] tracking-tight"
               variants={heroTextItem}
             >
               {personalInfo.name}
             </motion.h1>
             <motion.h2
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text mb-6"
+              className="font-display text-2xl sm:text-3xl lg:text-4xl font-semibold gradient-text mb-6 tracking-tight"
               variants={heroTextItem}
             >
               {personalInfo.title}
@@ -146,14 +146,14 @@ export default function Hero() {
               <motion.div
                 className="absolute -inset-3 rounded-full opacity-20"
                 style={{
-                  background: "conic-gradient(from 0deg, #6366f1, #a78bfa, #6366f1)",
+                  background: "conic-gradient(from 0deg, #22d3ee, #67e8f9, #0e7490, #22d3ee)",
                   filter: "blur(12px)",
                 }}
                 animate={prefersReduced ? undefined : { rotate: 360 }}
                 transition={{ duration: 8, ease: "linear", repeat: Infinity }}
               />
               {/* Ambient glow */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-accent opacity-30 blur-2xl scale-125" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-primary-dark opacity-25 blur-2xl scale-125" />
               {/* Border ring */}
               <div className="absolute inset-0 rounded-full border-2 border-primary/30" />
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-surface-2">

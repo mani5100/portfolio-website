@@ -14,6 +14,22 @@ const fadeUpVariant = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 };
 
+/* Chip emphasis scales with proficiency level */
+function chipClass(level?: string) {
+  const base =
+    "text-xs font-medium px-3 py-1.5 rounded-lg border transition-colors duration-200";
+  switch (level) {
+    case "Expert":
+      return `${base} bg-primary/15 text-primary-light border-primary/30`;
+    case "Advanced":
+      return `${base} bg-primary/[0.07] text-text-primary border-primary/15`;
+    case "Intermediate":
+      return `${base} bg-white/[0.04] text-text-secondary border-white/10`;
+    default:
+      return `${base} bg-white/[0.02] text-text-muted border-white/5`;
+  }
+}
+
 const cardVariant = {
   hidden: { opacity: 0, y: 24 },
   visible: (i: number) => ({
@@ -69,7 +85,7 @@ export default function Skills() {
           {skills.map((skillGroup, index) => (
             <motion.div
               key={skillGroup.category}
-              className="card hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-shadow duration-300"
+              className="card hover:shadow-lg hover:shadow-primary/5 transition-shadow duration-300"
               custom={index}
               variants={prefersReduced ? undefined : cardVariant}
               initial="hidden"
@@ -77,20 +93,21 @@ export default function Skills() {
               whileHover={prefersReduced ? undefined : { y: -3 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
             >
-              <h3 className="text-text-primary font-semibold text-xs uppercase tracking-widest mb-4 pb-3 border-b border-border">
-                {skillGroup.category}
-              </h3>
-              <ul className="flex flex-col gap-2.5">
+              <div className="flex items-baseline gap-3 mb-5 pb-3 border-b border-white/5">
+                <span className="font-mono text-primary/60 text-xs">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="text-text-primary font-semibold text-xs uppercase tracking-widest">
+                  {skillGroup.category}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
                 {skillGroup.items.map((skill) => (
-                  <li
-                    key={skill.name}
-                    className="flex items-center gap-2.5 text-text-secondary text-sm"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-primary/50 flex-shrink-0" />
+                  <span key={skill.name} className={chipClass(skill.level)}>
                     {skill.name}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
           ))}
         </div>

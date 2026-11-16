@@ -56,7 +56,7 @@ function TerminalMockup({ projectId }: { projectId: string }) {
   const snippet = terminalSnippets[projectId];
   if (!snippet) return null;
   return (
-    <div className="w-full aspect-video bg-[#0d0d14] rounded-xl border border-border font-mono text-xs overflow-hidden flex flex-col">
+    <div className="w-full aspect-video bg-[#0a0f16] rounded-xl border border-border font-mono text-xs overflow-hidden flex flex-col">
       {/* Title bar */}
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border/50 flex-shrink-0">
         <span className="w-2.5 h-2.5 rounded-full bg-red-500/60" />

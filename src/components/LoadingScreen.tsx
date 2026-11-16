@@ -40,7 +40,7 @@ export default function LoadingScreen() {
       {visible && (
         <motion.div
           key="loading"
-          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0a0a0f]"
+          className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#0b0e14]"
           aria-hidden="true"
           exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: -16 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
