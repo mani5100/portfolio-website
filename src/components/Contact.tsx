@@ -70,8 +70,8 @@ export default function Contact() {
               variants={prefersReduced ? undefined : itemVariant}
             >
               I&apos;m open to new roles, freelance projects, and research
-              collaborations. If you have something in mind — or just want to
-              say hi — my inbox is always open.
+              collaborations. If you have something in mind, or just want to
+              say hi, my inbox is always open.
             </motion.p>
 
             {/* Availability tags */}

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://abdulrehmanshoukat.com"),
   title: "Abdul Rehman | AI Engineer & Published Researcher",
   description:
-    "AI Engineer and published researcher with 6 peer-reviewed papers across IEEE, Wiley, and Springer. Builds AI systems that ship — multi-agent pipelines, edge-deployed surveillance, voice agents.",
+    "AI Engineer specializing in agentic AI, RAG systems, and LLM-powered backends, with 8 peer-reviewed papers across IEEE, Wiley, and Springer. Builds AI systems that ship, from multi-agent pipelines to edge-deployed computer vision.",
   keywords: [
     "Abdul Rehman",
     "AI Engineer",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abdul Rehman | AI Engineer & Published Researcher",
     description:
-      "AI Engineer and published researcher with 6 peer-reviewed papers across IEEE, Wiley, and Springer. Builds AI systems that ship — multi-agent pipelines, edge-deployed surveillance, voice agents.",
+      "AI Engineer specializing in agentic AI, RAG systems, and LLM-powered backends, with 8 peer-reviewed papers across IEEE, Wiley, and Springer. Builds AI systems that ship, from multi-agent pipelines to edge-deployed computer vision.",
     url: "https://abdulrehmanshoukat.com",
     siteName: "Abdul Rehman",
     locale: "en_US",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Abdul Rehman | AI Engineer & Published Researcher",
     description:
-      "AI Engineer and published researcher with 6 peer-reviewed papers across IEEE, Wiley, and Springer. Builds AI systems that ship.",
+      "AI Engineer specializing in agentic AI, RAG systems, and LLM-powered backends, with 8 peer-reviewed papers across IEEE, Wiley, and Springer.",
   },
 };
 

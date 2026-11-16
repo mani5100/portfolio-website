@@ -6,7 +6,7 @@ import { personalInfo } from "@/data/portfolio";
 import { FiMapPin, FiMail, FiPhone, FiGithub, FiLinkedin } from "react-icons/fi";
 
 const stats = [
-  { label: "Published Papers", value: "6" },
+  { label: "Published Papers", value: "8" },
   { label: "Class Rank", value: "2nd" },
   { label: "CGPA", value: "3.90" },
   { label: "Certifications", value: "9" },
@@ -155,29 +155,35 @@ export default function About() {
                 className="text-text-secondary text-lg leading-relaxed mb-4"
                 variants={prefersReduced ? undefined : bioParagraphVariant}
               >
-                Recent BSCS graduate (ranked 2nd, CGPA 3.90) from the University
-                of Lahore. As a research assistant at{" "}
-                <span className="text-primary font-medium">VLCMatrix Lab</span>,
-                I developed and evaluated deep learning models for medical
-                imaging, deepfake detection, and intelligent surveillance.
+                I&apos;m an AI Engineer working on agentic AI,
+                retrieval-augmented generation (RAG), and LLM-powered backends,
+                with a research background in deep learning and computer vision.
+                I enjoy the hard part of AI engineering: making models
+                dependable on messy, real-world data.
               </motion.p>
               <motion.p
                 className="text-text-secondary leading-relaxed mb-4"
                 variants={prefersReduced ? undefined : bioParagraphVariant}
               >
-                I&apos;ve independently shipped a RAG system for document Q&A, a
-                multi-agent code generation pipeline, and an edge-deployed
-                AI surveillance system on Raspberry Pi. I am currently building
-                production AI at{" "}
-                <span className="text-primary font-medium">Digitalytics</span>.
+                At{" "}
+                <span className="text-primary font-medium">Nextbridge</span>, I
+                build agentic AI and RAG systems for real business use cases. At{" "}
+                <span className="text-primary font-medium">Digitalytics</span>,
+                I design AI automation pipelines and voice agents that streamline
+                operational workflows.
               </motion.p>
               <motion.p
                 className="text-text-secondary leading-relaxed"
                 variants={prefersReduced ? undefined : bioParagraphVariant}
               >
-                My work spans the full research-to-production pipeline — from
-                authoring papers in IEEE, Springer, and Wiley journals, to
-                shipping real systems that run on real hardware.
+                Before industry, I spent nearly three years as a research member
+                at{" "}
+                <span className="text-primary font-medium">VLCMatrix Lab</span>,
+                working on deep learning for medical imaging, deepfake detection,
+                and agriculture. That work led to peer-reviewed publications in
+                IEEE, Springer, and Wiley, and gave me a habit I still rely on:
+                test carefully, measure honestly, and understand why a model
+                works before shipping it.
               </motion.p>
             </motion.div>
 
@@ -282,7 +288,7 @@ export default function About() {
                 initial="hidden"
                 animate={publisherInView ? "visible" : "hidden"}
               >
-                {["IEEE ×4", "Wiley", "Springer"].map((pub, i) => (
+                {["IEEE ×4", "Springer ×2", "Wiley"].map((pub, i) => (
                   <motion.span
                     key={pub}
                     className="tag"

@@ -77,14 +77,14 @@ export default function Hero() {
                 View My Work
               </motion.a>
               <motion.a
-                href={personalInfo.cvUrl}
+                href={personalInfo.resumeUrl}
                 download
                 className="btn-outline"
                 whileHover={prefersReduced ? undefined : { scale: 1.04, y: -2 }}
                 whileTap={prefersReduced ? undefined : { scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
-                Download CV
+                Download Resume
               </motion.a>
             </motion.div>
 
@@ -161,8 +161,7 @@ export default function Hero() {
                   src={personalInfo.profileImage}
                   alt={personalInfo.name}
                   fill
-                  className="object-cover object-top"
-                  style={{ left: '17px' }}
+                  className="object-cover object-center"
                   priority
                 />
               </div>

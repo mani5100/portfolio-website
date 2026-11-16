@@ -87,7 +87,7 @@ export default function Publications() {
   const featuredInView = useInView(featuredRef, { once: true, margin: "-80px" });
   const listInView     = useInView(listRef,     { once: true, margin: "-80px" });
 
-  const featuredPub = publications[0]; // id "1" — Wiley journal paper
+  const featuredPub = publications[0]; // id "1", featured journal paper
   const restPubs    = publications.slice(1);
 
   return (
@@ -116,12 +116,13 @@ export default function Publications() {
             variants={fadeUpVariant}
           />
           <motion.p className="text-text-secondary max-w-xl" variants={fadeUpVariant}>
-            6 peer-reviewed papers as an undergraduate across IEEE, Wiley, and Springer — covering AI
-            surveillance, deepfake detection, medical imaging, satellite imagery analysis, and agricultural AI.
+            8 peer-reviewed papers as an undergraduate across IEEE, Wiley, and Springer, covering agentic
+            AI evaluation, AI surveillance, deepfake detection, medical imaging, satellite imagery analysis,
+            autonomous vehicle platooning, and agricultural AI.
           </motion.p>
         </motion.div>
 
-        {/* Featured card — Wiley journal paper */}
+        {/* Featured card: top journal paper */}
         <motion.div
           ref={featuredRef}
           className="card border-primary/30 shadow-lg shadow-primary/5 mb-10

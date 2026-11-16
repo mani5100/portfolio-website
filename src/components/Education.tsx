@@ -97,7 +97,7 @@ export default function Education() {
           <div className="flex flex-wrap gap-4 mt-4 text-text-muted text-sm">
             <span className="flex items-center gap-1.5">
               <FiCalendar size={13} />
-              {edu.startDate} — {edu.endDate}
+              {edu.startDate} – {edu.endDate}
             </span>
             <span className="flex items-center gap-1.5">
               <FiMapPin size={13} />

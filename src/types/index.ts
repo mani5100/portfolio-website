@@ -9,7 +9,6 @@ export interface PersonalInfo {
   github: string;
   website?: string;
   profileImage: string;
-  cvUrl: string;
   resumeUrl: string;
 }
 

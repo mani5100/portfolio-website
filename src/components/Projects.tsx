@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView, useReducedMotion } from "framer-motion";
-import { projects } from "@/data/portfolio";
+import { projects, personalInfo } from "@/data/portfolio";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 /* ─── Terminal snippets ─────────────────────────────────────────────── */
@@ -10,6 +10,36 @@ const terminalSnippets: Record<
   { label: string; lines: { text: string; color: string }[] }
 > = {
   "1": {
+    label: "database_agent.py",
+    lines: [
+      { text: '> ask "top 10 customers by revenue"', color: "text-text-muted" },
+      { text: "[LLM]    Parsing question...",         color: "text-accent" },
+      { text: "[SCHEMA] 4 tables retrieved (Qdrant)", color: "text-blue-400" },
+      { text: "[SQL]    Compiled via SQLGlot",        color: "text-primary-light" },
+      { text: "[DONE]   12 rows, chart rendered",     color: "text-green-400" },
+    ],
+  },
+  "2": {
+    label: "rag_assistant.py",
+    lines: [
+      { text: '> query: "What is our leave policy?"', color: "text-text-muted" },
+      { text: "[RETRIEVE] Hybrid dense + BM25...",    color: "text-blue-400" },
+      { text: "[RERANK]   FlashRank top-5 selected",  color: "text-accent" },
+      { text: "[ANSWER]   Grounded response ready",   color: "text-green-400" },
+      { text: "[VOICE]    Piper TTS streaming...",     color: "text-yellow-400" },
+    ],
+  },
+  "3": {
+    label: "graph_rag.py",
+    lines: [
+      { text: "> python ingest.py report.pdf",       color: "text-text-muted" },
+      { text: "[EXTRACT] Entities + relations (LLM)", color: "text-accent" },
+      { text: "[GRAPH]   Writing nodes to Neo4j",     color: "text-blue-400" },
+      { text: "[DEDUP]   Embedding-based merge done",  color: "text-primary-light" },
+      { text: "[QUERY]   Cypher retrieval ready",     color: "text-green-400" },
+    ],
+  },
+  "4": {
     label: "surveillance.py",
     lines: [
       { text: "> python surveillance.py",      color: "text-text-muted" },
@@ -17,26 +47,6 @@ const terminalSnippets: Record<
       { text: "[ALERT] Knife detected (0.94)", color: "text-red-400" },
       { text: "[TTS]   Speaking alert...",     color: "text-yellow-400" },
       { text: "[INFO]  Dashboard SSE active",  color: "text-blue-400" },
-    ],
-  },
-  "2": {
-    label: "builder.py",
-    lines: [
-      { text: '> python builder.py "Todo app"',    color: "text-text-muted" },
-      { text: "[Planner]   Breaking down task...",  color: "text-accent" },
-      { text: "[Architect] Designing structure...", color: "text-primary-light" },
-      { text: "[Coder]     Writing app.py...",      color: "text-green-400" },
-      { text: "[Done]      Project written to disk", color: "text-green-400" },
-    ],
-  },
-  "3": {
-    label: "claude-skills",
-    lines: [
-      { text: "> /professor-finder MIT AI Lab",    color: "text-text-muted" },
-      { text: "[INFO]  Crawling faculty pages...", color: "text-blue-400" },
-      { text: "[FOUND] 12 professors matched",     color: "text-green-400" },
-      { text: "[EMAIL] Drafting cold email...",    color: "text-yellow-400" },
-      { text: "[POST]  LinkedIn draft ready",      color: "text-accent" },
     ],
   },
 };
@@ -302,6 +312,24 @@ export default function Projects() {
             </div>
           </>
         )}
+
+        {/* View all on GitHub */}
+        <motion.div
+          className="flex justify-center mt-14"
+          variants={fadeUpVariant}
+          initial="hidden"
+          animate={otherInView ? "visible" : "hidden"}
+        >
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline inline-flex items-center gap-2"
+          >
+            <FiGithub size={18} />
+            View all projects on GitHub
+          </a>
+        </motion.div>
       </div>
     </section>
   );

@@ -126,7 +126,7 @@ export default function Experience() {
                       )}
                       <span className="flex items-center gap-1.5">
                         <FiCalendar size={13} />
-                        {exp.startDate} — {exp.endDate}
+                        {exp.startDate} – {exp.endDate}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <FiMapPin size={13} />
